@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import CV from '../../assets/resume.pdf'
-import './Resume.css'
 
 export const Resume = () => {
   useEffect(() => {
