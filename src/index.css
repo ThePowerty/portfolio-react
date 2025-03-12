@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #161513;
+  color: white;
+  font-family: 'outfit';
+}
+
+.about,
+.projects,
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  margin: 80px 170px;
+}
+
+[class*="title"] {
+  position: relative;
+}
+
+[class*="title"] h1 {
+  padding: 0px 30px;
+  font-size: 80px;
+  font-weight: 600;
+}
+
+[class*="title"] img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
