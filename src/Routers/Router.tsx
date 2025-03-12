@@ -5,10 +5,10 @@ import { Resume } from '../Components';
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio-react">
         <Routes>
-          <Route path="/portfolio-react/" element={<Home/>} />
-          <Route path="/portfolio-react/resume" element={<Resume/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/resume" element={<Resume/>} />
         </Routes>
     </BrowserRouter>
   );
