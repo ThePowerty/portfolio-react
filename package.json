@@ -5,7 +5,8 @@
   "type": "module",
   "homepage": "https://thepowerty.github.io/portfolio-react/",
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
