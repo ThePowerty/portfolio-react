@@ -7,7 +7,7 @@
   "scripts": {
     "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "react-scripts build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -17,7 +17,6 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
-    "react-scripts": "^5.0.1",
     "zod": "^3.24.2"
   },
   "devDependencies": {
