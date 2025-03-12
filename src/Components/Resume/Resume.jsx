@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CV from '../../assets/CV-FSD-2025.pdf'
 
 export const Resume = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ export const Resume = () => {
     <div style={{ height: "100vh", overflow: "hidden" }}>
       <embed
         id="pdfEmbed"
-        src="../assets/Resume.pdf"
+        src={CV}
         type="application/pdf"
         width="100%"
         height="100%"
