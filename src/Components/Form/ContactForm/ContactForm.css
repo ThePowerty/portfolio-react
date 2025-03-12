@@ -13,3 +13,10 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+@media(max-width:1280px) {
+    .contact-submit {
+        font-size: 20px;
+        padding: 15px 40px;
+    }
+}
