@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import Home from '../App.jsx';
-import { Resume } from '../Components';
+import Resume from '../Components/Resume/Resume.jsx';
 
 export const Router = () => {
   return (

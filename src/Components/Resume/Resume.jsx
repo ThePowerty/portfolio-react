@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import CV from '../../assets/resume.pdf'
 
-export const Resume = () => {
+const Resume = () => {
   useEffect(() => {
     // Define a function to resize the embedded PDF
     const resizeEmbed = () => {
@@ -33,3 +33,5 @@ export const Resume = () => {
     </div>
   );
 };
+
+export default Resume;
