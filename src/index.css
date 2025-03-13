@@ -12,7 +12,8 @@ body {
 
 .about,
 .projects,
-.contact{
+.contact,
+.skills {
   display: flex;
   flex-direction: column;
   align-items: center;

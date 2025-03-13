@@ -22,6 +22,13 @@
     font-weight: 500;
 }
 
+.about-para p span {
+    background: linear-gradient(270deg, #DF9808 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .about-skills {
     display: flex;
     flex-direction: column;

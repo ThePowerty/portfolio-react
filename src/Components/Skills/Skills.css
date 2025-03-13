@@ -1,0 +1,19 @@
+.skills {
+    align-items: start;
+}
+
+.skills-title h1 {
+    font-size: 60px;
+}
+
+.skills-title img {
+    height: 50px;
+}
+
+.skills-container {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+}
+
