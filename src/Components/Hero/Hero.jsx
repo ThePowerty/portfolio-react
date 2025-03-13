@@ -12,7 +12,7 @@ export const Hero = () => {
       <p>Mi nombre es Williams y soy desarrollador Full-Stack de Madrid, España con experiencia desarrollando con Java, Python, React y Angular entre otros.</p>
       <div className="hero-action">
         <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Contacta conmigo</AnchorLink></div>
-        <Link to="/resume" target='_blank' className='hero-link'>
+        <Link to="#/resume" target='_blank' className='hero-link'>
           <div className="hero-resume">Curriculum</div>
         </Link>
       </div>
