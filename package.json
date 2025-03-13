@@ -6,7 +6,7 @@
   "homepage": "https://thepowerty.github.io/portfolio-react/#",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages -b dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
