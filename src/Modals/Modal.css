@@ -1,0 +1,54 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.541);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-radius: 15px;
+  z-index: 1000;
+  /* Asegura que el modal esté por encima de otros elementos */
+}
+
+.modal {
+  padding: 20px 30px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 650px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  background: none;
+  border: none;
+  padding: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.close-button:hover {
+  background: linear-gradient(260deg, #DF8908 20%, #B415FF 100%);
+  transition: 0.5s;
+}
+
+@media(max-width:1280px) {
+  .close-button {
+    top: -5%;
+    right: 30%;
+  }
+}

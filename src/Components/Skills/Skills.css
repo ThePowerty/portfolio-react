@@ -1,5 +1,5 @@
 .skills {
-    align-items: start;
+    align-items: flex-start;
 }
 
 .skills-title h1 {
@@ -11,9 +11,21 @@
 }
 
 .skills-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     width: 100%;
     gap: 50px;
-    justify-content: center;
 }
 
+@media(max-width:1000px) {
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:768px) {
+    .skills {
+        margin: 50px 70px;
+    }
+}

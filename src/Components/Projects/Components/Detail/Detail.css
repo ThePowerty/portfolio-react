@@ -1,0 +1,62 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    border-radius: 2rem;
+    color: white;
+    padding: 40px;
+    box-shadow: 0 2px 40px rgba(78, 76, 76, 0.5);
+}
+
+.detail h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    background: linear-gradient(270deg, #DF9808 70%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.detail p {
+    font-size: 24px;
+}
+
+.detail-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.detail-button button {
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: 1px solid white;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+}
+
+.detail-button button:hover {
+    transform: scale(1.10);
+    background: linear-gradient(264deg, #DF8908 -5.08%, #B415FF 106.28%);
+    transition: 0.5s;
+}
+
+@media(max-width:1280px) {
+    .detail {
+        max-width: 60%;
+    }
+    .detail h1 {
+        font-size: 30px;
+    }
+    .detail p {
+        font-size: 18px;
+    }
+    .detail-button button{
+        font-size: 18px;
+        padding: 20px 30px;
+        border-radius: 40px;
+    }
+}

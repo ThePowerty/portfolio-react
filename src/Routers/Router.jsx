@@ -2,14 +2,17 @@ import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "../App.jsx";
 import Resume from "../Components/Resume/Resume.jsx";
+import { ModalProvider } from "../Modals/Context/ModalContext.js";
 
 export const Router = () => {
   return (
-    <HashRouter>
-      <Routes basename="/portfolio-react">
-        <Route path="/" element={<Home/>} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-    </HashRouter>
+    <ModalProvider>
+      <HashRouter>
+        <Routes basename="/portfolio-react">
+          <Route path="/" element={<Home/>} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </HashRouter>
+    </ModalProvider>
   );
 };
