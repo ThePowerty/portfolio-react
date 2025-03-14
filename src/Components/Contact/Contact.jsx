@@ -16,7 +16,7 @@ export const Contact = () => {
       <div className="contact-section">
         <div className="contact-left">
             <h1>Es hora de conectar</h1>
-            <p>Actualmente estoy disponible para asumir nuevos proyectos, así que no dude en enviarme un mensaje sobre cualquier cosa en la que quiera que trabaje. Puedes contactar en cualquier momento.</p>
+            <p>En este momento, estoy disponible para asumir nuevos proyectos. No dude en enviarme un mensaje si tiene alguna iniciativa en la que le gustaría que colaborara. Estoy a su disposición para atender cualquier consulta en cualquier momento.</p>
             <div className="contact-details">
                 <div className="contact-detail">
                     <img src={mail_icon} alt="" /> <p>w.infanzon.98@gmail.com</p>
