@@ -18,34 +18,47 @@ export const About = () => {
           </div>
           <div className="about-right">
             <div className="about-para">
-              <p>Hola, mi nombre es <span>Williams</span>, Full-Stack Developer.</p>
               <p>
-                Soy un desarrollador apasionado con experiencia en la creación de
-                aplicaciones web robustas y escalables. Mi trayectoria incluye el
-                desarrollo de aplicaciones utilizando <span>Java y Python</span>, así como el
-                diseño de interfaces interactivas con <span>React y Angular</span>. Tengo un
-                sólido conocimiento en bases de datos relacionales y no
-                relacionales, lo que me permite optimizar el almacenamiento y la
-                recuperación de datos de manera eficiente. Además, cuento con
-                experiencia en frameworks como <span>Django y Spring</span>, lo que me permite
+                Hola, mi nombre es <span>Williams</span>, Full-Stack Developer.
+              </p>
+              <p>
+                Soy un desarrollador apasionado con experiencia en la creación
+                de aplicaciones web robustas y escalables. Mi trayectoria
+                incluye el desarrollo de aplicaciones utilizando{" "}
+                <span>Java y Python</span>, así como el diseño de interfaces
+                interactivas con <span>React y Angular</span>. Tengo un sólido
+                conocimiento en bases de datos relacionales y no relacionales,
+                lo que me permite optimizar el almacenamiento y la recuperación
+                de datos de manera eficiente. Además, cuento con experiencia en
+                frameworks como <span>Django y Spring</span>, lo que me permite
                 implementar arquitecturas modernas y seguras.
               </p>
               <p>
-                Estoy comprometido con la calidad del código y la mejora continua,
-                siempre buscando aprender y adoptar nuevas tecnologías para
-                ofrecer las mejores soluciones a mis clientes.
+                Estoy comprometido con la calidad del código y la mejora
+                continua, siempre buscando aprender y adoptar nuevas tecnologías
+                para ofrecer las mejores soluciones a mis clientes.
               </p>
               <p>
                 La comunicación y el trabajo en equipo es para mí esencial para
-                poder crecer como desarrollador. Soy proactivo y metódico, siempre
-                busco nuevos retos y me adapto fácilmente a los cambios.
+                poder crecer como desarrollador. Soy proactivo y metódico,
+                siempre busco nuevos retos y me adapto fácilmente a los cambios.
               </p>
               <p>Actualmente me encuentro estudiando VueJs y NodeJs.</p>
+              <p>
+                Puedes encontrarme en <span>LinkedIn</span> haciendo click{" "}
+                <a
+                  href="https://www.linkedin.com/in/williams-infanzón-fernández/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  aquí
+                </a>.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <Skills/>
+      <Skills />
     </div>
   );
 };

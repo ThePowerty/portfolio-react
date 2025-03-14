@@ -22,6 +22,11 @@
     font-weight: 500;
 }
 
+.about-para a {
+    text-decoration: none;
+    color: #B415FF;
+}
+
 .about-para p span {
     background: linear-gradient(270deg, #DF9808 10%, #B415FF 100%);
     background-clip: text;
