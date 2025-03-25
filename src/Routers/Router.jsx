@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Home from "../App.jsx";
+import Home from "../pages/Home.jsx";
 import Resume from "../Components/Resume/Resume.jsx";
 import { ModalProvider } from "../Modals/Context/ModalContext.js";
 
