@@ -1,7 +1,6 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import Resume from "../Components/Resume/Resume.jsx";
+import {Home, Resume} from "../pages";
 import { ModalProvider } from "../Modals/Context/ModalContext.js";
 
 export const Router = () => {
@@ -9,7 +8,7 @@ export const Router = () => {
     <ModalProvider>
       <HashRouter>
         <Routes basename="/portfolio-react">
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
       </HashRouter>

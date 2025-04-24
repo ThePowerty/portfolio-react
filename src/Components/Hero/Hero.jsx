@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import profile_img from '../../assets/profile_img.png'
+import profile_img from "../../assets/profile.jpg";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Link } from 'react-router-dom'
 
