@@ -41,6 +41,14 @@ export const Projects = () => {
           btn="View more"
         />
         <Project
+          id="libreria"
+          title="Librería"
+          src={django}
+          description="Proyecto creado con Django para la gestión de una librería. Creado para practicar y mejorar mis habilidades en el desarrollo de aplicaciones backend"
+          repo="libreria"
+          btn="View more"
+        />
+        <Project
           id="instagram"
           title="Instagram"
           src={django}
