@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: space-between;
     margin: 20px 170px;
+    box-shadow: 5px 5px 20px 15px rgba(39, 37, 36, 0.5),
+                -5px -5px 20px 15px rgba(39, 37, 36, 0.5);
+    
+    border-radius: 50px;
 }
 
 .logo {
@@ -15,6 +19,10 @@
     list-style: none;
     gap: 60px;
     font-size: 20px;
+}
+
+.nav-menu .anchor-link:hover {
+    color: #B923E1;
 }
 
 .nav-connect{
@@ -38,19 +46,21 @@
 .nav-mob-open ,
 .nav-mob-close {
     display: none;
+    cursor: pointer;
 }
 
 @media(max-width:1280px) {
     .navbar {
         margin: 20px 50px;
+        box-shadow: none;
     }
     .nav-connect {
         display: none;
     }
     .nav-mob-open {
         display: block;
-        position: fixed;
-        right: 30px;
+        position: relative;
+        right: 20px;
     }
     .nav-mob-close {
         display: block;

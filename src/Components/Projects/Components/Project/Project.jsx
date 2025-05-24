@@ -4,7 +4,7 @@ import { Modal } from '../../../../Modals/Modal'
 import { Detail } from '../Detail/Detail'
 import './Project.css'
 
-export const Project = ({title, src, description, repo, id}) => {
+export const Project = ({title, src, description, repo, btn, id}) => {
   const { activeModal, openModal, closeModal } = useContext(ModalContext)
 
   const handleOpenModal = () => {
@@ -12,14 +12,15 @@ export const Project = ({title, src, description, repo, id}) => {
   }
 
   return (
-    <div className='project'>
+    <div className='project' onClick={handleOpenModal}>
       <h1>{title}</h1>
-      <img onClick={handleOpenModal} src={src} alt="" />
+      <img src={src} alt="alt" />
       <Modal modalId={id} isOpen={activeModal === id} onClose={closeModal}>
         <Detail
           title={title}
           description={description}
-          repo={repo}/>
+          repo={repo}
+          btn={btn}/>
       </Modal>
     </div>
   )

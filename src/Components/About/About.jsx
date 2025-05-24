@@ -2,6 +2,8 @@ import React from "react";
 import "./About.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import profile_img from "../../assets/photo_cv.jpg";
+import LinkedIn from "../../assets/linkedin.png";
+import github from "../../assets/github.png";
 import { Skills } from "../Skills/Skills";
 
 export const About = () => {
@@ -14,24 +16,25 @@ export const About = () => {
         </div>
         <div className="about-sections">
           <div className="about-left">
-            <img src={profile_img} alt="" />
+            <img src={profile_img} alt="profile_img" />
           </div>
           <div className="about-right">
             <div className="about-para">
               <p>
-                Hola, mi nombre es <span>Williams</span>, Full-Stack Developer.
+                Hola, mi nombre es <span>Williams</span>, Back-end Developer.
               </p>
               <p>
-                Soy un desarrollador apasionado con experiencia en la creación
-                de aplicaciones web robustas y escalables. Mi trayectoria
-                incluye el desarrollo de aplicaciones utilizando{" "}
-                <span>Java y Python</span>, así como el diseño de interfaces
-                interactivas con <span>React y Angular</span>. Tengo un sólido
-                conocimiento en bases de datos relacionales y no relacionales,
-                lo que me permite optimizar el almacenamiento y la recuperación
-                de datos de manera eficiente. Además, cuento con experiencia en
-                frameworks como <span>Django y Spring</span>, lo que me permite
-                implementar arquitecturas modernas y seguras.
+                Apasionado por la tecnología y la innovación, soy un
+                desarrollador <span> backend </span> especializado en{" "}
+                <span> Spring</span>, con una sólida experiencia en la creación
+                de aplicaciones escalables y eficientes. Mi habilidad para
+                diseñar <span> APIs RESTful</span> y gestionar bases de datos me
+                permite construir soluciones robustas que cumplen con las
+                necesidades del negocio. Además, tengo conocimientos en
+                tecnologías frontend como<span> React y Angular</span>, lo que
+                me permite colaborar de manera efectiva en proyectos full-stack
+                y contribuir a la creación de interfaces de usuario atractivas y
+                funcionales.
               </p>
               <p>
                 Estoy comprometido con la calidad del código y la mejora
@@ -44,16 +47,22 @@ export const About = () => {
                 siempre busco nuevos retos y me adapto fácilmente a los cambios.
               </p>
               <p>Actualmente me encuentro estudiando VueJs y NodeJs.</p>
-              <p>
-                Puedes encontrarme en <span>LinkedIn</span> haciendo click{" "}
+              <div className="about-socials">
                 <a
                   href="https://www.linkedin.com/in/williams-infanzón-fernández/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  aquí
-                </a>.
-              </p>
+                  <img src={LinkedIn} alt="" />
+                </a>
+                <a
+                            href="https://github.com/thepowerty"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={github} alt="" />
+                          </a>
+              </div>
             </div>
           </div>
         </div>

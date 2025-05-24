@@ -28,4 +28,7 @@
     .skills {
         margin: 50px 70px;
     }
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
 }

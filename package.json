@@ -1,7 +1,7 @@
 {
   "name": "portfolio-react",
   "private": true,
-  "version": "1.0.5",
+  "version": "2.0.1",
   "type": "module",
   "homepage": "https://thepowerty.github.io/portfolio-react/",
   "scripts": {

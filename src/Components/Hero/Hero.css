@@ -103,3 +103,9 @@
         border-radius: 40px;
     }
 }
+
+@media(max-width:768px) {
+    .hero-action {
+        flex-direction: column;
+    }
+}
