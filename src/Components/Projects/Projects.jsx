@@ -40,6 +40,14 @@ export const Projects = () => {
           repo="bibliotecaApi"
           btn="View more"
         />
+        <Project
+          id="instagram"
+          title="Instagram"
+          src={django}
+          description="Proyecto creado con Django para hacer una aplicación con funcionalidades parecidas a Instagram."
+          repo="MyInstagram"
+          btn="View more"
+        />
       </Carousel>
       <div className="projects-title">
         <h1>Proyectos Front-end</h1>
@@ -53,14 +61,6 @@ export const Projects = () => {
           description="Este proyecto es una Pokédex interactiva que permite a los usuarios buscar y filtrar Pokémon utilizando la PokéAPI. La aplicación está construida con React y Vite, y ofrece funcionalidades para comparar las debilidades de los tipos de Pokémon. Actualmente, el proyecto se encuentra en desarrollo y está en la versión 1.0.2."
           repo="https://thepowerty.github.io/pokedex/"
           btn="Open"
-        />
-        <Project
-          id="instagram"
-          title="Instagram"
-          src={django}
-          description="Proyecto creado con Django para hacer una aplicación con funcionalidades parecidas a Instagram."
-          repo="MyInstagram"
-          btn="View more"
         />
         <Project
           id="proyecto-responsive"
