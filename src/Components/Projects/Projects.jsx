@@ -6,6 +6,7 @@ import django from "../../assets/projects/django.png";
 import spring from "../../assets/projects/spring.png";
 import pokemon from "../../assets/projects/pokemon.png";
 import conquer from "../../assets/projects/conquer.png";
+import wordpress from "../../assets/projects/wordpress.png"
 import { Carousel, Project } from "./Components";
 
 export const Projects = () => {
@@ -74,8 +75,16 @@ export const Projects = () => {
           id="proyecto-responsive"
           title="Proyecto Responsive"
           src={conquer}
-          description="Proyecto HTML con CSS responsive para el máster en desarrollo web Full Stack de ConqueBlocks"
+          description="Proyecto HTML con CSS responsive para el máster en desarrollo Web Full Stack de ConquerBlocks"
           repo="https://thepowerty.github.io/Proyecto/"
+          btn="Open"
+        />
+        <Project
+          id="robin-hood"
+          title="Robin Hood"
+          src={wordpress}
+          description="Web corporativa de RobinHood.co creada en Wordpress para el máster en desarrollo Web Full Stack de ConquerBlocks"
+          repo="https://robin-hood-kvgdqgvbz1.live-website.com"
           btn="Open"
         />
       </Carousel>
