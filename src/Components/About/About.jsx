@@ -46,7 +46,7 @@ export const About = () => {
                 poder crecer como desarrollador. Soy proactivo y metódico,
                 siempre busco nuevos retos y me adapto fácilmente a los cambios.
               </p>
-              <p>Actualmente me encuentro estudiando VueJs y NodeJs.</p>
+              <p>Actualmente me encuentro estudiando Golang, VueJs y NodeJs.</p>
               <div className="about-socials">
                 <a
                   href="https://www.linkedin.com/in/williams-infanzón-fernández/"
