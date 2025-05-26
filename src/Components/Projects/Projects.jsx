@@ -18,6 +18,14 @@ export const Projects = () => {
       </div>
       <Carousel>
         <Project
+          id="web-socket-sever"
+          title="Chat en tiempo real"
+          src={spring}
+          description="Esta es una aplicación de chat en tiempo real desarrollada con Spring Boot que utiliza WebSocket para habilitar la comunicación bidireccional entre clientes y servidor. El proyecto incluye un frontend básico integrado dentro de la estructura del proyecto con una página HTML sencilla para la interacción con el chat."
+          repo="web-socket-server"
+          btn="View more"
+        />
+        <Project
           id="spring-security"
           title="Spring Security"
           src={spring}
