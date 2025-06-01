@@ -7,6 +7,7 @@ import spring from "../../assets/projects/spring.png";
 import pokemon from "../../assets/projects/pokemon.png";
 import conquer from "../../assets/projects/conquer.png";
 import wordpress from "../../assets/projects/wordpress.png"
+import node from "../../assets/projects/node.png"
 import { Carousel, Project } from "./Components";
 
 export const Projects = () => {
@@ -17,6 +18,14 @@ export const Projects = () => {
         <img src={theme_pattern} alt="" />
       </div>
       <Carousel>
+        <Project
+          id="web-socket-sever-nodejs"
+          title="Chat en tiempo real con Node.Js"
+          src={node}
+          description="Esta es una aplicación de chat en tiempo real desarrollada con Node.Js que utiliza Express y WebSocket para habilitar la comunicación bidireccional entre clientes y servidor."
+          repo="chat-web-socket"
+          btn="View more"
+        />
         <Project
           id="web-socket-sever"
           title="Chat en tiempo real"
