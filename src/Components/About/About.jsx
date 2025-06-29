@@ -49,7 +49,7 @@ export const About = () => {
               <p>Actualmente me encuentro estudiando Golang, VueJs y NodeJs.</p>
               <div className="about-socials">
                 <a
-                  href="https://www.linkedin.com/in/williams-infanzón-fernández/"
+                  href="https://es.linkedin.com/in/williams-infanzón?trk=profile-badge"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

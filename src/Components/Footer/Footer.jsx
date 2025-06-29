@@ -16,7 +16,7 @@ export const Footer = () => {
         <div className="footer-content-right">
           <p>Connect with me</p>
           <a
-            href="https://www.linkedin.com/in/williams-infanzón-fernández/"
+            href="https://es.linkedin.com/in/williams-infanzón?trk=profile-badge"
             target="_blank"
             rel="noopener noreferrer"
           >
