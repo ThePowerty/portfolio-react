@@ -21,7 +21,7 @@ export const About = () => {
           <div className="about-right">
             <div className="about-para">
               <p>
-                Hola, mi nombre es <span>Williams</span>, Back-end Developer.
+                Hola, mi nombre es <span>Williams</span>, Full-stack Developer.
               </p>
               <p>
                 Apasionado por la tecnología y la innovación, soy un
