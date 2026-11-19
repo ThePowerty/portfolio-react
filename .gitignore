@@ -1,5 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs and test artifacts
+dist/
+dist-ssr/
+coverage/
+.nyc_output/
+
+# Tool caches
+.eslintcache
+.vite/
+*.tsbuildinfo
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+*.local
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,17 +27,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editors and IDEs
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local agent context (never versioned)
+AGENTS.md
+MEMORY.md
