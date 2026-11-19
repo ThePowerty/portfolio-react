@@ -1,120 +1,137 @@
 import React from "react";
 import "./Projects.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
-import arrow_icon from "../../assets/arrow_icon.svg";
-import django from "../../assets/projects/django.png";
-import spring from "../../assets/projects/spring.png";
-import pokemon from "../../assets/projects/pokemon.png";
-import conquer from "../../assets/projects/conquer.png";
-import wordpress from "../../assets/projects/wordpress.png"
-import node from "../../assets/projects/node.png"
-import { Carousel, Project } from "./Components";
+
+const projects = [
+  {
+    number: "01",
+    type: "Seguridad y arquitectura",
+    title: "Spring Auth Initializer",
+    summary: "Base reutilizable para construir APIs seguras con autenticación JWT, roles y contraseñas cifradas.",
+    challenge: "Evitar que la autenticación se convierta en lógica duplicada y difícil de mantener en cada nuevo servicio.",
+    approach: "Separación de responsabilidades, filtros de seguridad y una estructura preparada para extender permisos sin acoplarlos al dominio.",
+    stack: ["Java", "Spring Boot", "Spring Security", "JWT"],
+    repo: "https://github.com/thepowerty/spring-auth-initializer",
+    visual: "security",
+  },
+  {
+    number: "02",
+    type: "Tiempo real",
+    title: "Chat WebSocket",
+    summary: "Aplicación de mensajería con comunicación bidireccional entre cliente y servidor mediante Node.js y WebSocket.",
+    challenge: "Mantener conexiones activas y distribuir mensajes sin depender del ciclo petición–respuesta tradicional.",
+    approach: "Servidor Express, canal WebSocket y eventos claros para conexión, mensaje y desconexión.",
+    stack: ["Node.js", "Express", "WebSocket", "JavaScript"],
+    repo: "https://github.com/thepowerty/chat-web-socket",
+    visual: "realtime",
+  },
+  {
+    number: "03",
+    type: "Producto frontend",
+    title: "Pokédex interactiva",
+    summary: "Aplicación React para buscar, filtrar y comparar Pokémon consumiendo PokéAPI.",
+    challenge: "Convertir una API extensa en una experiencia de consulta rápida, responsive y fácil de explorar.",
+    approach: "Componentes reutilizables, filtros por tipo y una interfaz enfocada en comparación de información.",
+    stack: ["React", "Vite", "REST API", "CSS"],
+    repo: "https://github.com/thepowerty/pokedex",
+    live: "https://thepowerty.github.io/pokedex/",
+    visual: "product",
+  },
+];
+
+const ProjectVisual = ({ variant }) => (
+  <div className={`project-blueprint project-blueprint-${variant}`} aria-hidden="true">
+    <div className="blueprint-topbar">
+      <span />
+      <span />
+      <span />
+      <code>{variant === "security" ? "SecurityFilterChain.java" : variant === "realtime" ? "socket.server.js" : "pokemon.service.js"}</code>
+    </div>
+    {variant === "security" && (
+      <div className="security-flow">
+        <code>POST /auth/login</code>
+        <i>→</i>
+        <code>JWT filter</code>
+        <i>→</i>
+        <code>ROLE_USER</code>
+      </div>
+    )}
+    {variant === "realtime" && (
+      <div className="socket-flow">
+        <code>client_01</code>
+        <div className="socket-core">WS</div>
+        <code>client_02</code>
+        <span className="socket-signal socket-signal-one" />
+        <span className="socket-signal socket-signal-two" />
+      </div>
+    )}
+    {variant === "product" && (
+      <div className="product-flow">
+        <div className="search-line">pikachu <span>⌘ K</span></div>
+        <div className="product-result">
+          <strong>#025</strong>
+          <span>electric</span>
+        </div>
+        <div className="product-bars"><i /><i /><i /></div>
+      </div>
+    )}
+  </div>
+);
 
 export const Projects = () => {
   return (
-    <div id="projects" className="projects">
-      <div className="projects-title">
-        <h1>Proyectos Back-end</h1>
-        <img src={theme_pattern} alt="" />
-      </div>
-      <Carousel>
-        <Project
-          id="web-socket-sever-nodejs"
-          title="Chat en tiempo real con Node.Js"
-          src={node}
-          description="Esta es una aplicación de chat en tiempo real desarrollada con Node.Js que utiliza Express y WebSocket para habilitar la comunicación bidireccional entre clientes y servidor."
-          repo="chat-web-socket"
-          btn="View more"
-        />
-        <Project
-          id="web-socket-sever"
-          title="Chat en tiempo real"
-          src={spring}
-          description="Esta es una aplicación de chat en tiempo real desarrollada con Spring Boot que utiliza WebSocket para habilitar la comunicación bidireccional entre clientes y servidor. El proyecto incluye un frontend básico integrado dentro de la estructura del proyecto con una página HTML sencilla para la interacción con el chat."
-          repo="web-socket-server"
-          btn="View more"
-        />
-        <Project
-          id="spring-security"
-          title="Spring Security"
-          src={spring}
-          description="Este proyecto es una base para la creación de APIs seguras utilizando Spring Security, JSON Web Tokens (JWT) y cifrado de contraseñas. Está diseñado siguiendo los principios SOLID para asegurar un código limpio, mantenible y escalable."
-          repo="spring-auth-initializer"
-          btn="View more"
-        />
-        <Project
-          id="will-ecommerce"
-          title="Ecommerce"
-          src={spring}
-          description="Este proyecto es una API RESTful desarrollada con Java y Spring Boot, diseñada para gestionar un concesionario de coches. La API permite la gestión de usuarios, roles y autenticación mediante inicio de sesión, proporcionando un sistema seguro y escalable para la administración de datos relacionados con vehículos y usuarios."
-          repo="will-ecommerce"
-          btn="View more"
-        />
-        <Project
-          id="biblioteca-api"
-          title="Biblioteca API"
-          src={spring}
-          description="Este proyecto es una API RESTful desarrollada con Java y Spring Boot, creada con el propósito de practicar y mejorar mis habilidades en el desarrollo de aplicaciones backend. La API permite gestionar una biblioteca, facilitando la administración de libros y autores"
-          repo="bibliotecaApi"
-          btn="View more"
-        />
-        <Project
-          id="libreria"
-          title="Librería"
-          src={django}
-          description="Proyecto creado con Django para la gestión de una librería. Creado para practicar y mejorar mis habilidades en el desarrollo de aplicaciones backend"
-          repo="libreria"
-          btn="View more"
-        />
-        <Project
-          id="instagram"
-          title="Instagram"
-          src={django}
-          description="Proyecto creado con Django para hacer una aplicación con funcionalidades parecidas a Instagram."
-          repo="MyInstagram"
-          btn="View more"
-        />
-      </Carousel>
-      <div className="projects-title">
-        <h1>Proyectos Front-end</h1>
-        <img src={theme_pattern} alt="" />
-      </div>
-      <Carousel>
-        <Project
-          id="pokédex"
-          title="Pokédex"
-          src={pokemon}
-          description="Este proyecto es una Pokédex interactiva que permite a los usuarios buscar y filtrar Pokémon utilizando la PokéAPI. La aplicación está construida con React y Vite, y ofrece funcionalidades para comparar las debilidades de los tipos de Pokémon. Actualmente, el proyecto se encuentra en desarrollo y está en la versión 1.0.2."
-          repo="https://thepowerty.github.io/pokedex/"
-          btn="Open"
-        />
-        <Project
-          id="proyecto-responsive"
-          title="Proyecto Responsive"
-          src={conquer}
-          description="Proyecto HTML con CSS responsive para el máster en desarrollo Web Full Stack de ConquerBlocks"
-          repo="https://thepowerty.github.io/Proyecto/"
-          btn="Open"
-        />
-        <Project
-          id="robin-hood"
-          title="Robin Hood"
-          src={wordpress}
-          description="Web corporativa de RobinHood.co creada en Wordpress para el máster en desarrollo Web Full Stack de ConquerBlocks"
-          repo="https://robin-hood-kvgdqgvbz1.live-website.com"
-          btn="Open"
-        />
-      </Carousel>
-      <a
-        href="https://github.com/thepowerty"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="projects-show-more">
-          <p>Show More</p>
-          <img src={arrow_icon} alt="" />
+    <section id="projects" className="projects section">
+      <div className="section-heading">
+        <div>
+          <p className="section-kicker">Trabajo seleccionado</p>
+          <h2 className="section-title">Proyectos con decisiones detrás.</h2>
         </div>
+        <p className="section-intro">
+          Tres piezas que muestran cómo abordo seguridad, comunicación en tiempo real y producto. El código está disponible para revisión.
+        </p>
+      </div>
+
+      <div className="project-list">
+        {projects.map((project) => (
+          <article className="case-study" key={project.title}>
+            <div className="case-copy">
+              <div className="case-meta">
+                <span>{project.number}</span>
+                <span>{project.type}</span>
+              </div>
+              <h3>{project.title}</h3>
+              <p className="case-summary">{project.summary}</p>
+              <dl className="case-details">
+                <div>
+                  <dt>Reto</dt>
+                  <dd>{project.challenge}</dd>
+                </div>
+                <div>
+                  <dt>Enfoque</dt>
+                  <dd>{project.approach}</dd>
+                </div>
+              </dl>
+              <ul className="case-stack" aria-label={`Tecnologías de ${project.title}`}>
+                {project.stack.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              <div className="case-actions">
+                <a href={project.repo} target="_blank" rel="noreferrer">
+                  Ver repositorio <span aria-hidden="true">↗</span>
+                </a>
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noreferrer">
+                    Abrir proyecto <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </div>
+            <ProjectVisual variant={project.visual} />
+          </article>
+        ))}
+      </div>
+
+      <a className="all-projects" href="https://github.com/thepowerty" target="_blank" rel="noreferrer">
+        Explorar todos los repositorios <span aria-hidden="true">↗</span>
       </a>
-    </div>
+    </section>
   );
 };

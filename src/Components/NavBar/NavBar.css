@@ -1,91 +1,132 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 170px;
-    box-shadow: 5px 5px 20px 15px rgba(39, 37, 36, 0.5),
-                -5px -5px 20px 15px rgba(39, 37, 36, 0.5);
-    
-    border-radius: 50px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(45, 67, 95, 0.72);
+  background: rgba(14, 25, 43, 0.88);
+  backdrop-filter: blur(16px);
 }
 
-.logo {
-    border-radius: 5px 30px;
+.navbar {
+  display: flex;
+  min-height: 4.75rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 60px;
-    font-size: 20px;
+.brand {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-.nav-menu .anchor-link:hover {
-    color: #B923E1;
+.brand-logo {
+  width: clamp(12rem, 22vw, 16.5rem);
+  height: auto;
 }
 
-.nav-connect{
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.5s;
+.nav-panel,
+.nav-menu {
+  display: flex;
+  align-items: center;
 }
 
-.nav-connect:hover{
-    transform: scale(1.05);
+.nav-panel {
+  gap: 2rem;
 }
 
-.anchor-link {
-    text-decoration: none;
-    color: white;
+.nav-menu {
+  gap: 1.7rem;
+  list-style: none;
 }
 
-.nav-mob-open ,
-.nav-mob-close {
-    display: none;
-    cursor: pointer;
+.nav-menu a,
+.nav-resume {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
 }
 
-@media(max-width:1280px) {
-    .navbar {
-        margin: 20px 50px;
-        box-shadow: none;
-    }
-    .nav-connect {
-        display: none;
-    }
-    .nav-mob-open {
-        display: block;
-        position: relative;
-        right: 20px;
-    }
-    .nav-mob-close {
-        display: block;
-        position: relative;
-        top: 30px;
-        left: 290px;
-        width: 30px;
-    }
-    .nav-menu {
-        position: fixed;
-        flex-direction: column;
-        align-items: start;
-        top: 0;
-        right: -350px;
-        gap: 30px;
-        background-color: #1F0016;
-        width: 350px;
-        height: 100%;
-        z-index: 2;
-        transition: right 0.5s;
-    }
-    .nav-menu li {
-        font-size: 30px;
-        padding-left: 100px;
-        flex-direction: row;
-        gap: 20px;
-    }
+.nav-menu a:hover,
+.nav-resume:hover {
+  color: var(--color-text);
+}
+
+.nav-resume {
+  color: var(--color-accent-soft);
+  font-family: var(--font-mono);
+}
+
+.menu-toggle {
+  display: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 1px;
+  margin: 0.3rem auto;
+  background: currentColor;
+  transition: transform 180ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+@media (max-width: 820px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .brand-logo {
+    width: clamp(10.5rem, 50vw, 13.5rem);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-panel {
+    position: fixed;
+    inset: 4.75rem 0 auto;
+    display: grid;
+    gap: 2rem;
+    padding: 2rem var(--page-gutter) 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    transform: translateY(-130%);
+    visibility: hidden;
+    transition: transform 220ms ease, visibility 220ms ease;
+  }
+
+  .nav-panel.is-open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav-menu {
+    display: grid;
+    gap: 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 1.2rem;
+  }
 }

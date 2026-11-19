@@ -1,43 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+.resume-page {
+  min-height: 100vh;
+}
+
+.resume-toolbar {
+  display: flex;
+  min-height: 5.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.resume-viewer {
+  padding-bottom: 3rem;
+}
+
+.resume-intro {
+  display: none;
+}
+
+.resume-viewer object {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.resume-viewer object p {
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 720px) {
+  .resume-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .resume-actions {
+    width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .resume-actions .button {
+    flex: 1;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .resume-viewer object {
+    height: 70vh;
+  }
 }
 

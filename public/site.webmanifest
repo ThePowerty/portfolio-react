@@ -1,0 +1,22 @@
+{
+  "name": "Williams Infanzón Fernández — Portfolio",
+  "short_name": "Williams Infanzón",
+  "description": "Portfolio profesional de Williams Infanzón Fernández, desarrollador de software.",
+  "start_url": "/portfolio-react/",
+  "scope": "/portfolio-react/",
+  "display": "standalone",
+  "background_color": "#0E192B",
+  "theme_color": "#0E192B",
+  "icons": [
+    {
+      "src": "marca/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "marca/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

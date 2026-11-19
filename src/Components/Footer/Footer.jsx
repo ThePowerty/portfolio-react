@@ -1,36 +1,32 @@
 import React from "react";
 import "./Footer.css";
-import LinkedIn from "../../assets/linkedin.png";
-import github from "../../assets/github.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer">
-      <hr />
+    <footer className="footer page-shell">
       <div className="footer-content">
         <p className="footer-content-left">
-          © {currentYear} - Williams Infanzón. Todos los derechos reservados{" "}
+          © {currentYear} Williams Infanzón Fernández
         </p>
         <div className="footer-content-right">
-          <p>Connect with me</p>
           <a
-            href="https://es.linkedin.com/in/williams-infanzón?trk=profile-badge"
+            href="https://es.linkedin.com/in/williams-infanzón"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={LinkedIn} alt="" />
+            LinkedIn <span aria-hidden="true">↗</span>
           </a>
           <a
             href="https://github.com/thepowerty"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={github} alt="" />
+            GitHub <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };

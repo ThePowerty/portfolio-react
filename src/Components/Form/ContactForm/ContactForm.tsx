@@ -1,7 +1,7 @@
 import { z } from "zod";
 import "./ContactForm.css";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { FieldErrors, SubmitHandler, useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { InputField } from "../Components/InputField";
 import { TextAreaField } from "../Components";
@@ -15,45 +15,73 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export const ContactForm = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) });
-  const [result, setResult] = useState("");
+  const {
+    control,
+    handleSubmit,
+    reset,
+    setFocus,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: { name: "", email: "", message: "" },
+  });
+  const [result, setResult] = useState<{ tone: "success" | "error"; message: string } | null>(null);
 
-  const onSubmit = async (data) => {
-    setResult("Enviando....");
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setResult(null);
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      setResult({
+        tone: "error",
+        message: "El formulario no está disponible ahora. Escríbeme directamente por email.",
+      });
+      return;
+    }
+
     const formData = new FormData();
-    
     formData.append("name", data.name);
     formData.append("email", data.email);
     formData.append("message", data.message);
-    formData.append("access_key", "c470ee7c-3eae-48e1-ba6f-6bebbf180580");
+    formData.append("access_key", accessKey);
+    formData.append("subject", "Nuevo contacto desde el portfolio");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const resultData = await response.json();
 
-      if (resultData.success) {
-        alert("Mensaje enviado correctamente");
-      } else {
-        alert(resultData.message || "Error al enviar el mensaje");
+      if (!response.ok || !resultData.success) {
+        throw new Error("Submission failed");
       }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error al enviar el mensaje");
+
+      reset();
+      setResult({ tone: "success", message: "Mensaje enviado. Te responderé lo antes posible." });
+    } catch {
+      setResult({
+        tone: "error",
+        message: "No se pudo enviar el mensaje. Puedes escribirme directamente por email.",
+      });
     }
   };
 
+  const onInvalid = (fieldErrors: FieldErrors<FormValues>) => {
+    const firstError = Object.keys(fieldErrors)[0] as keyof FormValues | undefined;
+    if (firstError) setFocus(firstError);
+  };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="contact-form-wrap">
+      <form onSubmit={handleSubmit(onSubmit, onInvalid)} noValidate aria-busy={isSubmitting}>
         <InputField
           name="name"
           control={control}
           label="Nombre"
-          placeholder="Nombre Completo"
+          placeholder="Tu nombre"
+          autoComplete="name"
           error={errors.name}
         />
         <InputField
@@ -61,18 +89,25 @@ export const ContactForm = () => {
           control={control}
           label="Email"
           type="email"
-          placeholder="Introduce el email"
+          placeholder="tu@email.com"
+          autoComplete="email"
           error={errors.email}
         />
         <TextAreaField
           name="message"
           control={control}
-          label="Mensaje"
-          placeholder="Introduce el mensaje"
-          rows={8}
+          label="¿En qué puedo ayudarte?"
+          placeholder="Cuéntame brevemente el contexto, el equipo o el proyecto."
+          rows={6}
           error={errors.message}
         />
-        <button className="contact-submit" type="submit">Enviar</button>
+        <button className="contact-submit button button-primary" type="submit" disabled={isSubmitting}>
+          <span>{isSubmitting ? "Enviando…" : "Enviar mensaje"}</span>
+          <span aria-hidden="true">{isSubmitting ? "·" : "↗"}</span>
+        </button>
+        <div className="form-status" aria-live="polite" aria-atomic="true">
+          {result && <p className={`form-status-${result.tone}`}>{result.message}</p>}
+        </div>
       </form>
     </div>
   );

@@ -1,72 +1,50 @@
+.contact {
+  padding-bottom: var(--section-space);
+  border-top: 1px solid var(--color-border);
+}
+
 .contact-section {
-    display: flex;
-    gap: 150px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(23rem, 1.1fr);
+  gap: clamp(3rem, 9vw, 8rem);
+  align-items: start;
 }
 
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.contact-left h2 {
+  max-width: 12ch;
+  margin-top: 1rem;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  font-weight: 650;
+  letter-spacing: -0.065em;
+  line-height: 0.96;
 }
 
-.contact-left h1 {
-    font-size: 50px;
-    font-weight: 700;
-    background: linear-gradient(270deg, #DF8908 80%, #B415FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.contact-left > p:not(.section-kicker) {
+  max-width: 35rem;
+  margin-top: 1.7rem;
+  color: var(--color-text-muted);
+  font-size: 1.04rem;
 }
 
-.contact-left p {
-    max-width: 550px;
-    color: #D8D8D8;
-    font-size: 20px;
-    line-height: 35px;
+.contact-direct {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
 }
 
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: #D8D8D8;
-    font-size: 22px;
+.contact-direct a {
+  color: var(--color-accent-soft);
+  text-underline-offset: 0.35rem;
 }
 
-.contact-detail {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.contact-direct span {
+  color: var(--color-text-muted);
 }
 
-@media(max-width:1050px) {
-    .contact {
-        gap: 50px;
-        margin: 50px 70px;
-        align-items: start;
-    }
-    .contact-title h1{
-        padding: 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-    .contact-title img {
-        width: 130px;
-        margin-right: -20px;
-    }
-    .contact-section {
-        flex-direction: column;
-    }
-    .contact-left h1 {
-        font-size: 50px;
-    }
-    .contact-left p {
-        font-size: 18px;
-    }
-    .contact-detail {
-        gap: 20px;
-    }
-    .contact-detail img {
-        width: 25px;
-    }
+@media (max-width: 860px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
 }

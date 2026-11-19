@@ -1,34 +1,48 @@
-import { Control, Controller, FieldError } from "react-hook-form";
+import { Control, Controller, FieldError, FieldValues, Path } from "react-hook-form";
 import "./Components.css";
 import React from "react";
 
-interface Props {
-  name: string;
-  control: Control<any>;
+interface Props<T extends FieldValues> {
+  name: Path<T>;
+  control: Control<T>;
   label: string;
   placeholder: string;
-  type?: string;
+  type?: React.HTMLInputTypeAttribute;
+  autoComplete?: string;
   error?: FieldError;
 }
 
-export const InputField = ({ name, control, label, type, placeholder, error }: Props) => {
+export const InputField = <T extends FieldValues,>({
+  name,
+  control,
+  label,
+  type = "text",
+  placeholder,
+  autoComplete,
+  error,
+}: Props<T>) => {
+  const errorId = `${String(name)}-error`;
+
   return (
     <div className="form-group">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={String(name)}>{label}</label>
       <Controller
         name={name}
         control={control}
         render={({ field }) => (
           <input
-            id={name}
+            id={String(name)}
             type={type}
             placeholder={placeholder}
-            className={`form-control ${error ? "in-invalid" : ""}`}
+            autoComplete={autoComplete}
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? errorId : undefined}
+            className={`form-control ${error ? "is-invalid" : ""}`}
             {...field}
           />
         )}
-      ></Controller>
-      {error && <p className="text-danger">{error.message}</p>}
+      />
+      {error && <p className="text-danger" id={errorId} role="alert">{error.message}</p>}
     </div>
   );
 };

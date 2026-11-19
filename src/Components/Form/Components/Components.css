@@ -1,60 +1,54 @@
 .is-invalid {
-    border-color: red;
+    border-color: var(--color-danger) !important; /* Invalid state must override base field border */
 }
 
 .text-danger {
-    color: red;
-    max-width: 200px;
-    margin-top: 0.25rem;
+    min-height: 1.2rem;
+    color: var(--color-danger);
+    font-size: 0.78rem;
 }
 
 .form-group {
-    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0.55rem;
 }
 
-
 .form-group label {
-    color: #D8D8D8;
-    font-size: 22px;
-    font-weight: 500;
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.form-control {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-ink);
+    color: var(--color-text);
+    transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .form-group input {
-    border: none;
-    width: 700px;
-    height: 78px;
-    padding-left: 20px;
-    border-radius: 4px;
-    background: #32323c;
-    color: #A0A0A0;
-    font-family: Outfit;
-    font-size: 20px;
+    min-height: 3.5rem;
+    padding: 0 1rem;
 }
 
 .form-group textarea {
-    width: 650px;
-    border: none;
-    padding: 25px;
-    border-radius: 4px;
-    background: #32323c;
-    color: #A0A0A0;
-    font-family: Outfit;
-    font-size: 20px;
+    min-height: 10rem;
+    padding: 1rem;
+    resize: none;
 }
 
-@media(max-width:1280px) {
-    .form-group label {
-        font-size: 20px;
-    }
-    .form-group input {
-        width: 100%;
-        font-size: 20px;
-    }
-    .form-group textarea {
-        width: 95%;
-        font-size: 20px;
-    }
+.form-control::placeholder {
+    color: #727e8f;
+}
+
+.form-control:hover {
+    border-color: #3c4a5e;
+}
+
+.form-control:focus {
+    border-color: var(--color-accent);
+    background: var(--color-surface);
 }
