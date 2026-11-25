@@ -22,7 +22,7 @@ export const Resume = () => {
         <div className="resume-intro">
           <p className="section-kicker">Currículum</p>
           <h1 id="resume-title">Williams Infanzón</h1>
-          <p>Desarrollador backend especializado en Java y Spring.</p>
+          <p>Desarrollador backend y full-stack con Java, Spring Boot y React.</p>
         </div>
         <object data={CV} type="application/pdf" aria-label="Currículum de Williams Infanzón">
           <p>

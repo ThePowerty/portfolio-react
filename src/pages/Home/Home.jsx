@@ -11,8 +11,7 @@ import {
 
 export const Home = () => {
   useEffect(() => {
-    document.title = "Williams Infanzón — Backend Developer";
-    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    const targetId = window.location.hash.slice(1);
 
     if (targetId && !targetId.startsWith("/")) {
       requestAnimationFrame(() => {

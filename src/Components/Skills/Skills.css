@@ -8,23 +8,11 @@
 
 .capability {
   display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: 1rem;
-  padding-block: 2.2rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.capability-number {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-}
-
-.capability > div {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.75fr) minmax(15rem, 1fr) minmax(15rem, 1fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 2rem;
   align-items: start;
+  padding-block: 2.2rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .capability h3 {
@@ -48,14 +36,8 @@
 }
 
 @media (max-width: 860px) {
-  .capability > div {
+  .capability {
     grid-template-columns: 1fr;
     gap: 0.8rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .capability {
-    grid-template-columns: 2rem minmax(0, 1fr);
   }
 }

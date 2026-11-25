@@ -11,12 +11,12 @@ export const About = () => {
       </div>
       <div className="about-copy">
         <p className="section-kicker">Perfil</p>
-        <h2>Me importa que el código siga siendo entendible después de entregarlo.</h2>
+        <h2>Cómo trabajo</h2>
         <p>
-          Soy desarrollador backend especializado en Java y Spring. Trabajo desde la estructura: responsabilidades claras, contratos de API útiles y decisiones que el siguiente desarrollador pueda comprender.
+          Empiezo por las reglas de negocio y los permisos de cada operación. A partir de ahí defino el contrato de la API y el modelo de datos, y documento las decisiones que ayudan a mantener el código.
         </p>
         <p>
-          Mi experiencia con React y Angular me permite colaborar de forma cercana con frontend y producto, anticipando cómo se consumirá cada servicio. Busco equipos donde la calidad, la comunicación y la mejora continua formen parte del trabajo diario.
+          También trabajo en la interfaz para comprobar el flujo completo, desde la petición en React hasta la respuesta de la API. Busco posiciones de nivel intermedio en backend Java o full-stack con foco en backend.
         </p>
         <div className="about-links">
           <a href="https://es.linkedin.com/in/williams-infanzón" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>

@@ -47,7 +47,7 @@
   font-size: clamp(3rem, 6.4vw, 5.8rem);
   font-weight: 650;
   letter-spacing: -0.07em;
-  line-height: 0.86;
+  line-height: 0.98;
 }
 
 .hero h1 span {
@@ -159,7 +159,7 @@
 }
 
 .trace-api {
-  top: 43%;
+  top: 66%;
   right: 0;
 }
 
@@ -234,7 +234,14 @@
   }
 
   .hero h1 {
-    font-size: clamp(3rem, 16vw, 4.6rem);
+    font-size: clamp(2.45rem, 12vw, 4.6rem);
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    padding-inline-end: 4rem;
   }
 
   .hero-actions {
@@ -251,10 +258,10 @@
 
   .hero-visual {
     position: absolute;
-    top: 2rem;
+    top: 3.4rem;
     right: var(--page-gutter);
-    width: 5.75rem;
-    min-height: 5.75rem;
+    width: 3rem;
+    min-height: 3rem;
     margin: 0;
     opacity: 0.82;
   }

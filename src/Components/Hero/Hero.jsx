@@ -8,13 +8,13 @@ export const Hero = () => {
     <section id="hero" className="hero">
       <div className="hero-grid page-shell">
         <div className="hero-copy">
-          <p className="hero-eyebrow">Backend developer · Madrid / remoto</p>
+          <p className="hero-eyebrow">Madrid · Remoto</p>
           <h1>
             Williams Infanzón Fernández
-            <span>Construyo backends claros, seguros y preparados para crecer.</span>
+            <span>Desarrollador backend y full-stack</span>
           </h1>
           <p className="hero-summary">
-            Especializado en Java y Spring Boot, diseño APIs y servicios que convierten requisitos de negocio en software mantenible.
+            Diseño APIs y lógica de negocio con Java y Spring Boot. Integro React y PostgreSQL para llevar funcionalidades de extremo a extremo.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">
@@ -26,31 +26,31 @@ export const Hero = () => {
           </div>
           <ul className="hero-proof" aria-label="Áreas principales">
             <li>Java · Spring</li>
-            <li>APIs REST</li>
-            <li>WebSockets</li>
+            <li>PostgreSQL</li>
+            <li>React</li>
           </ul>
         </div>
 
-        <div className="hero-visual" aria-label="Representación del flujo de una petición API">
+        <div className="hero-visual">
           <div className="portrait-frame">
             <img src={profileImg} alt="Retrato de Williams Infanzón Fernández" />
           </div>
-          <div className="trace trace-client">
+          <div className="trace trace-client" aria-hidden="true">
             <span>01</span>
             <strong>cliente</strong>
-            <code>POST /auth</code>
+            <code>GET /api/tracks</code>
           </div>
           <div className="trace-line trace-line-one" aria-hidden="true"><i /></div>
-          <div className="trace trace-api">
+          <div className="trace trace-api" aria-hidden="true">
             <span>02</span>
             <strong>API</strong>
-            <code>validar · autorizar</code>
+            <code>identificar al usuario</code>
           </div>
           <div className="trace-line trace-line-two" aria-hidden="true"><i /></div>
-          <div className="trace trace-data">
+          <div className="trace trace-data" aria-hidden="true">
             <span>03</span>
             <strong>datos</strong>
-            <code>persistir · responder</code>
+            <code>consultar su progreso</code>
           </div>
         </div>
       </div>

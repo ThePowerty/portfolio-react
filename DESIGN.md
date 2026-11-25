@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: "Williams Infanzón Fernández Portfolio"
-description: "Portfolio técnico-editorial para presentar a Williams como desarrollador backend especializado en Java y Spring."
+description: "Portfolio técnico-editorial para presentar el perfil backend y full-stack de Williams, con Java y Spring como especialidad."
 colors:
   primary: "#4FE0BE"
   ink: "#0E192B"
@@ -49,7 +49,7 @@ Un cuaderno de arquitectura de software convertido en portfolio: superficies osc
 - **Locale(s) and language policy:** español como idioma único de la interfaz. El inglés se reserva para nombres oficiales de tecnologías.
 - **Usage scene:** revisión rápida desde portátil o móvil, habitualmente desde LinkedIn, un CV o una candidatura.
 - **Register:** marca profesional personal.
-- **Memorable signature:** una traza visual `cliente → API → servicio → datos` integrada en el hero.
+- **Memorable signature:** una traza visual de la consulta de seguimiento de Yomio, desde el cliente hasta los datos del usuario.
 - **Restraint:** navegación, formularios y lectura de casos deben ser silenciosos, directos y familiares.
 - **Anti-references:** carruseles de logos, mosaicos de tarjetas genéricas, neón multicolor, sombras pesadas y texto aspiracional sin evidencia.
 - **Token ownership/runtime mapping:** las variables CSS de `src/index.css` son la fuente runtime canónica. Este documento refleja sus valores aceptados; los componentes consumen exclusivamente variables semánticas.
