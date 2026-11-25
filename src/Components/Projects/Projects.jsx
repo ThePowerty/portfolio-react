@@ -3,10 +3,20 @@ import "./Projects.css";
 
 const projects = [
   {
-    number: "01",
+    type: "Proyecto principal · Full-stack",
+    title: "Yomio",
+    summary: "Plataforma para seguir anime, películas, manga y manhwa, registrar el progreso y descubrir nuevas recomendaciones.",
+    challenge: "Compartir un catálogo y una comunidad mientras cada persona conserva el control de sus notas, su progreso y los spoilers que ve.",
+    approach: "Separé la API REST en controladores, servicios y repositorios. La API valida los DTO, obtiene la identidad del contexto de seguridad y limita las consultas privadas al propietario. React consume la API y Docker Compose arranca la aplicación junto con PostgreSQL.",
+    stack: ["Java 21", "Spring Boot", "Spring Security", "React 19", "PostgreSQL", "Flyway", "Docker Compose"],
+    repo: "https://github.com/ThePowerty/Yomio",
+    technical: "https://github.com/ThePowerty/Yomio/blob/master/docs/backend/README.md",
+    visual: "platform",
+  },
+  {
     type: "Seguridad y arquitectura",
     title: "Spring Auth Initializer",
-    summary: "Base reutilizable para construir APIs seguras con autenticación JWT, roles y contraseñas cifradas.",
+    summary: "Base reutilizable para APIs con autenticación JWT y autorización por roles.",
     challenge: "Evitar que la autenticación se convierta en lógica duplicada y difícil de mantener en cada nuevo servicio.",
     approach: "Separación de responsabilidades, filtros de seguridad y una estructura preparada para extender permisos sin acoplarlos al dominio.",
     stack: ["Java", "Spring Boot", "Spring Security", "JWT"],
@@ -14,7 +24,6 @@ const projects = [
     visual: "security",
   },
   {
-    number: "02",
     type: "Tiempo real",
     title: "Chat WebSocket",
     summary: "Aplicación de mensajería con comunicación bidireccional entre cliente y servidor mediante Node.js y WebSocket.",
@@ -25,7 +34,6 @@ const projects = [
     visual: "realtime",
   },
   {
-    number: "03",
     type: "Producto frontend",
     title: "Pokédex interactiva",
     summary: "Aplicación React para buscar, filtrar y comparar Pokémon consumiendo PokéAPI.",
@@ -38,14 +46,31 @@ const projects = [
   },
 ];
 
+const blueprintLabels = {
+  platform: "Arquitectura de Yomio",
+  security: "Autenticación y roles",
+  realtime: "Canal WebSocket",
+  product: "Consulta de catálogo",
+};
+
 const ProjectVisual = ({ variant }) => (
   <div className={`project-blueprint project-blueprint-${variant}`} aria-hidden="true">
     <div className="blueprint-topbar">
       <span />
       <span />
       <span />
-      <code>{variant === "security" ? "SecurityFilterChain.java" : variant === "realtime" ? "socket.server.js" : "pokemon.service.js"}</code>
+      <code>{blueprintLabels[variant]}</code>
     </div>
+    {variant === "platform" && (
+      <div className="platform-flow">
+        <code>React 19</code>
+        <i>→</i>
+        <code>Spring Boot</code>
+        <i>→</i>
+        <code>PostgreSQL</code>
+        <span>catálogo · progreso · comunidad</span>
+      </div>
+    )}
     {variant === "security" && (
       <div className="security-flow">
         <code>POST /auth/login</code>
@@ -66,7 +91,7 @@ const ProjectVisual = ({ variant }) => (
     )}
     {variant === "product" && (
       <div className="product-flow">
-        <div className="search-line">pikachu <span>⌘ K</span></div>
+        <div className="search-line">pikachu</div>
         <div className="product-result">
           <strong>#025</strong>
           <span>electric</span>
@@ -83,10 +108,10 @@ export const Projects = () => {
       <div className="section-heading">
         <div>
           <p className="section-kicker">Trabajo seleccionado</p>
-          <h2 className="section-title">Proyectos con decisiones detrás.</h2>
+          <h2 className="section-title">Proyectos y decisiones técnicas</h2>
         </div>
         <p className="section-intro">
-          Tres piezas que muestran cómo abordo seguridad, comunicación en tiempo real y producto. El código está disponible para revisión.
+          Yomio reúne mi trabajo en APIs, seguridad, datos e interfaz. Los demás casos profundizan en autenticación, tiempo real y consumo de APIs.
         </p>
       </div>
 
@@ -95,7 +120,6 @@ export const Projects = () => {
           <article className="case-study" key={project.title}>
             <div className="case-copy">
               <div className="case-meta">
-                <span>{project.number}</span>
                 <span>{project.type}</span>
               </div>
               <h3>{project.title}</h3>
@@ -114,9 +138,14 @@ export const Projects = () => {
                 {project.stack.map((item) => <li key={item}>{item}</li>)}
               </ul>
               <div className="case-actions">
-                <a href={project.repo} target="_blank" rel="noreferrer">
+                <a href={project.repo} target="_blank" rel="noreferrer" aria-label={`Ver repositorio de ${project.title}`}>
                   Ver repositorio <span aria-hidden="true">↗</span>
                 </a>
+                {project.technical && (
+                  <a href={project.technical} target="_blank" rel="noreferrer">
+                    Leer documentación del backend <span aria-hidden="true">↗</span>
+                  </a>
+                )}
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noreferrer">
                     Abrir proyecto <span aria-hidden="true">↗</span>
