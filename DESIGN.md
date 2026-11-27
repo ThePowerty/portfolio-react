@@ -49,7 +49,7 @@ Un cuaderno de arquitectura de software convertido en portfolio: superficies osc
 - **Locale(s) and language policy:** español como idioma único de la interfaz. El inglés se reserva para nombres oficiales de tecnologías.
 - **Usage scene:** revisión rápida desde portátil o móvil, habitualmente desde LinkedIn, un CV o una candidatura.
 - **Register:** marca profesional personal.
-- **Memorable signature:** una traza visual de la consulta de seguimiento de Yomio, desde el cliente hasta los datos del usuario.
+- **Memorable signature:** un diagrama compacto que conecta el cliente, la API y la base de datos de Yomio.
 - **Restraint:** navegación, formularios y lectura de casos deben ser silenciosos, directos y familiares.
 - **Anti-references:** carruseles de logos, mosaicos de tarjetas genéricas, neón multicolor, sombras pesadas y texto aspiracional sin evidencia.
 - **Token ownership/runtime mapping:** las variables CSS de `src/index.css` son la fuente runtime canónica. Este documento refleja sus valores aceptados; los componentes consumen exclusivamente variables semánticas.
@@ -66,7 +66,7 @@ Manrope comunica con claridad y suficiente carácter en nombre, titulares y cuer
 
 ## Layout
 
-Contenedor máximo de 74rem, gutters fluidos y secciones separadas por 7rem. El hero ocupa el primer viewport descontando la navegación. Los casos de estudio alternan texto y visual técnico; en móvil se convierten en una sola columna sin perder acciones.
+Contenedor máximo de 74rem, gutters fluidos y secciones separadas por 7rem. La presentación de perfil es breve para acercar los proyectos al primer viewport. La sección de proyectos abre con el caso principal, presenta dos destacados en paralelo y reúne los demás en filas compactas. En móvil, los destacados ocupan una columna y conservan todas sus acciones.
 
 ## Elevation & Depth
 
@@ -100,7 +100,7 @@ Se prefieren símbolos CSS y texto. Los enlaces externos muestran una flecha tex
 
 ### Motion
 
-Entrada del hero de 650ms, pulso de traza de 2.8s y revelado progresivo de casos. `prefers-reduced-motion` elimina animación y desplazamiento suave.
+Entrada del hero de 650 ms y transiciones breves en las acciones. `prefers-reduced-motion` elimina animación y desplazamiento suave.
 
 ### Content and data visualization
 

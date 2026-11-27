@@ -24,35 +24,9 @@ export const Hero = () => {
               Descargar CV <span aria-hidden="true">↘</span>
             </a>
           </div>
-          <ul className="hero-proof" aria-label="Áreas principales">
-            <li>Java · Spring</li>
-            <li>PostgreSQL</li>
-            <li>React</li>
-          </ul>
         </div>
 
-        <div className="hero-visual">
-          <div className="portrait-frame">
-            <img src={profileImg} alt="Retrato de Williams Infanzón Fernández" />
-          </div>
-          <div className="trace trace-client" aria-hidden="true">
-            <span>01</span>
-            <strong>cliente</strong>
-            <code>GET /api/tracks</code>
-          </div>
-          <div className="trace-line trace-line-one" aria-hidden="true"><i /></div>
-          <div className="trace trace-api" aria-hidden="true">
-            <span>02</span>
-            <strong>API</strong>
-            <code>identificar al usuario</code>
-          </div>
-          <div className="trace-line trace-line-two" aria-hidden="true"><i /></div>
-          <div className="trace trace-data" aria-hidden="true">
-            <span>03</span>
-            <strong>datos</strong>
-            <code>consultar su progreso</code>
-          </div>
-        </div>
+        <img className="hero-portrait" src={profileImg} alt="Retrato de Williams Infanzón Fernández" />
       </div>
     </section>
   )
